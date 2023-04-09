@@ -4,4 +4,6 @@ link: https://github.com/subprotocol/genetic-js
 
 - first install npm, then install node
 - from command line run: node ga_equation.js
-- the global variable that contains all fitness is allFitness
+- Fitnesses and formula will be ptinted to 'Fitness.txt' and 'Formula.txt'
+- Run plot from 'graph.py'
+
