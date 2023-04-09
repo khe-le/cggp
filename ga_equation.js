@@ -25,9 +25,10 @@ const Genetic = require('genetic-js');
 
 // ----- BEGINNING OF GP ALGORITHM -----
 // Convert user's INFIX formula to PREFIX 
-const prefixFormula = lib.convert_infix_to_prefix(u_infixFormula);
+// const prefixFormula = lib.convert_infix_to_prefix(u_infixFormula);
 // Or use this web converter for better accuracy
 // https://www.web4college.com/converters/infix-to-postfix-prefix.php
+const prefixFormula = '+x-yz';
 
 // Add variables to values list
 const gp_values = '0123456789' + u_vars.join('');
@@ -238,6 +239,7 @@ genetic.generation = function(pop, generation, stats) {
 
 genetic.notification = function(pop, generation, stats, isDone) {
   const value = pop[0].entity;
+  let currentFitness = Math.round(stats.maximum
   allFitness.push(stats.maximum);
 
   const infixVal = lib.convert_prefix_to_infix(value); 
@@ -267,13 +269,18 @@ genetic.evolve({
   mutation: 0.3,
   skip: 0 /* frequency for notifications */
 }, {
-  solution: '+x-yz', // The function for the GA to learn.
+  solution: prefixFormula, // The function for the GA to learn.
   testCases: u_tests, // Test cases to learn from.
   maxTreeDepth: 25,
   maxLength: 100,
   manager: utilityManager
 })
 
+// ----- OUTPUT FITNESS + FORMULA TO TXT FILES -----
 fs.writeFile('Fitness.txt', allFitness.toString(), (err) => {
+  if (err) throw err;
+})
+
+fs.writeFile('Formula.txt', u_infixFormula, (err) => {
   if (err) throw err;
 })
