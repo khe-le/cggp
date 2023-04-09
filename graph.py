@@ -1,14 +1,27 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
+# Max no. of generations
+n_gen = 100000
+
+# Get fitnesses and formula
 f = open('Fitness.txt', 'r')
-DATA = list(f.read())
-N_GEN = 100000
-GRAPH_TITLE = 'Fitness of x + y - z'
+data = f.read()
+yValues = data.split(',')
+t = open('Formula.txt', 'r')
+formula = t.read()
+
+# Close all files
+f.close()
+t.close()
 
 
-plt.scatter(N_GEN, DATA, cmap='Green', edgecolor = 'black', linewidth = 1, alpha=0.75)  #data on the y axis
-plt.title(GRAPH_TITLE)
-plt.xlabel("Generation")
+xValues= np.array(list(range(0,len(yValues))))
+title = "Fitness of Formula '{}'".format(formula)
+
+# Plot
+plt.plot(xValues, yValues)
+plt.title(title)
+plt.xlabel("Generation (No. of generations = {}, Max = {})".format(len(xValues),n_gen))
 plt.ylabel("Fitness Score")
 plt.show()
-#print(DATA)
