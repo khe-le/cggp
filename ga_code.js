@@ -82,7 +82,7 @@ genetic.fitness = function(entity_str) {
     try {
         eval(eval_entity_str);
         fitness = 1000
-        if (eval(eval_entity_str) == eval(this.userData.solution){
+        if (eval(eval_entity_str) !== undefined && eval(eval_entity_str) == eval(this.userData.solution){
             // Higher fitness if test code is shorter than solution length
             fitness += (this.userData.solution.length - eval_entity_str.length);
         }
