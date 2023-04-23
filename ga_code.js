@@ -1,4 +1,4 @@
-// Evolve a piece of code that tells if 1000 is even or odd
+// Learn to build a piece of code that tells if 1000 is even or odd with GP
 
 const tokens = ['1000','2','0','if','else',';','%','==','(',')','{','}','console.log("even")','console.log("odd")'];
 
