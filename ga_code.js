@@ -1,4 +1,5 @@
-// Learn to build a piece of code that tells if 1000 is even or odd with GP
+// Genetic programming
+// Learn to build a piece of code that tells if 1000 is even or odd
 
 const tokens = ['1000','2','0','if','else',';','%','==','(',')','{','}','console.log("even")','console.log("odd")'];
 
@@ -74,7 +75,7 @@ genetic.fitness = function(entity_str) {
     let eval_entity_str = entity_str.replaceAll('*', '');
     let fitness = 0
 
-    // ---------- Everything below here is NOT WORKING ---------- 
+    // ---------- Everything below here needs FIXING ---------- 
     // First check if code is evaluable
     try {
         eval(eval_entity_str);
@@ -88,7 +89,7 @@ genetic.fitness = function(entity_str) {
         fitness = 0;
     }
     return fitness;
-    // -------- Everything above this line is NOT WORKING -------- 
+    // -------- Everything above this line needs FIXING -------- 
 
 }
 
@@ -96,7 +97,7 @@ genetic.fitness = function(entity_str) {
 genetic.generation = function(pop, generation, stats, isDone) {
     let entity_str = pop[0].entity.replaceAll('*', '');
 
-    // ---------- Everything below here is NOT WORKING ---------- 
+    // ---------- Everything below here needs FIXING ---------- 
     if (eval(entity_str) == undefined){
         return true;
     }
@@ -106,7 +107,7 @@ genetic.generation = function(pop, generation, stats, isDone) {
     else {
         return true;
     };
-    // -------- Everything above this line is NOT WORKING -------- 
+    // -------- Everything above this line needs FIXING -------- 
 }
 
 // Notification method - displaying status while evolving
