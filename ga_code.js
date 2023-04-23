@@ -2,6 +2,8 @@
 // Learn to build a piece of code that tells if 1000 is even or odd
 
 const tokens = ['1000','2','0','if','else',';','%','==','(',')','{','}','console.log("even")','console.log("odd")'];
+const solutionStr = 'if(1000%2==0){console.log("even");}else{console.log("odd");}';
+const maxTokens = 30;
 
 const Genetic = require('genetic-js');
 
@@ -129,7 +131,7 @@ genetic.evolve({
     crossover: 0.3,
     mutation: 0.3,
 }, {
-    solution: 'if(1000%2==0){console.log("even");}else{console.log("odd");}',
+    solution: solutionStr,
     tokenList: tokens,
-    maxTokensNum: 30,
+    maxTokensNum: maxTokens,
 })
