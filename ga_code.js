@@ -48,7 +48,7 @@ genetic.crossover = function(parent1, parent2) {
     const parent2Left = parent2_ls.slice(0,index2);
     const parent2Right = parent2_ls.slice(index2);
   
-    //C Crossover the left and right side
+    // Crossover the left and right side
     let child1 = parent1Left.concat(parent2Right);
     let child2 = parent2Left.concat(parent1Right);
   
