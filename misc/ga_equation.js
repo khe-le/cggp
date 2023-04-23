@@ -16,7 +16,7 @@ const u_tests =  [{x:1, y:5, z:6}, {x: 3, y:7, z:15},
 
 
 // ----- LIBRARIES -----
-const lib = require("./lib");
+const lib = require("../lib");
 const fs = require("fs")
 const Genetic = require('genetic-js');
 
@@ -239,12 +239,11 @@ genetic.generation = function(pop, generation, stats) {
 
 genetic.notification = function(pop, generation, stats, isDone) {
   const value = pop[0].entity;
-  let currentFitness = Math.round(stats.maximum
   allFitness.push(stats.maximum);
 
   const infixVal = lib.convert_prefix_to_infix(value); 
 
-  console.log(`Generation ${generation}, Best Fitness ${stats.maximum}, Best genome: ${infixVal}`);
+  console.log(`Generation ${generation}, Best Fitness ${stats.maximum}, Best individual: ${infixVal}`);
 
   if (isDone) {
     if (this.userData.testCases) {
