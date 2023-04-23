@@ -81,12 +81,13 @@ genetic.fitness = function(entity_str) {
     // First check if code is evaluable
     try {
         eval(eval_entity_str);
-        fitness = 1000
-        if (eval(eval_entity_str) !== undefined && eval(eval_entity_str) == eval(this.userData.solution){
-            // Higher fitness if test code is shorter than solution length
-            fitness += (this.userData.solution.length - eval_entity_str.length);
+        if (eval(eval_entity_str) !== undefined && eval(eval_entity_str) === eval(this.userData.solution){
+            // Lower fitness score if code string is either longer or shorter than solution length
+            fitness = this.userData.solution.length - Math.abs(this.userData.solution.length - eval_entity_str.length);
         }
-        
+        else {
+            fitness = 0
+        }
     } catch (e) {
         fitness = 0;
     }
@@ -100,10 +101,7 @@ genetic.generation = function(pop, generation, stats, isDone) {
     let entity_str = pop[0].entity.replaceAll('*', '');
 
     // ---------- Everything below here needs FIXING ---------- 
-    if (eval(entity_str) == undefined){
-        return true;
-    }
-    else if (eval(entity_str) == eval(this.userData.solution)){
+    if (eval(entity_str) !== undefined && eval(entity_str) === eval(this.userData.solution) && entity_str.length === this.userData.solution.length){
         return false;
     }
     else {
