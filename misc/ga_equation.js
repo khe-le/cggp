@@ -1,7 +1,7 @@
 // A genetic programming script that learns a math formula
 // Developers: Khe Le, Sylvia Le
 // Course: COM496 - Research Seminar
-// Last updated: Apr 19, 2023
+// Last updated: Apr 9, 2023
 
 
 // ----- USER INPUT -----
@@ -16,9 +16,11 @@ const u_tests =  [{x:1, y:5, z:6}, {x: 3, y:7, z:15},
 
 
 // ----- LIBRARIES -----
-const lib = require("./lib");
+const lib = require("../lib");
 const fs = require("fs")
 const Genetic = require('genetic-js');
+
+
 
 
 // ----- BEGINNING OF GP ALGORITHM -----
