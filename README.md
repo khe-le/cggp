@@ -50,19 +50,18 @@ maxTokensNum = 30;
 - Input code string with `*` for crossover and mutation purposes: for example, `'if*else*{*(*;'`
 - Remove `*` with `replaceAll('*', '')`
 - Evaluate code string and solution with `eval()` and compare results
-- If code is evaluable (could be `undefined`): `fitness = 1000`
-- If code is evaluable and gives the same evaluated result as solution: `fitness = 1000` plus add x points if code has x fewer characters than solution. Likewise, take away x points from fitness if it has x more characters.
-- Else if code is inevaluable: `fitness = 0`
+- If code is evaluable but undefined, or is inevaluable: fitness score = 0
+- If code is evaluable, not undefined, and gives the same evaluated result as solution: fitness score depends on the code's length compared to solution length (highest fitness if has the same length as solution)
 
 Current problems: unable to compare two eval() values, for example:
 - `eval('console.log("even")') == eval('console.log("odd")')` is `true`
 - `eval(';') == eval('console.log("even")')` is `true`
-- Solve this by reviewing [JS Equality comparisons](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+- Need to review [JS Equality comparisons](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
 
 
 ##### `genetic.generation`
 - Return `false` to keep the program going
-- Return `true` to terminate it once we find the right solution
+- Return `true` to terminate it once we find the right solution with the same length
 - Easy to implement, but we need to solve the `eval()` problem above
 - `pop[0]` return an object, for example `{fitness: 1000, entity: 'if*else*{*(*;'}`
 

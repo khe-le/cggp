@@ -6,6 +6,7 @@ const solutionStr = 'if(1000%2===0){return("even");}else{return("odd");}';
 const maxTokens = 30;
 let allFitness = [];
 
+
 const Genetic = require('genetic-js');
 const fs = require("fs")
 
@@ -141,7 +142,6 @@ genetic.fitness = function(entity_str) {
     } catch (e) {
         return 0;
     }
-
 }
 
 // Termination
@@ -156,6 +156,7 @@ genetic.generation = function(pop, generation, stats, isDone) {
     try {
         eval(test_code);
         if (eval(test_code) !== undefined && eval(test_code) === eval(solution_code) && code_str === this.userData.solution){
+
             return false;
         }
         else {
@@ -202,3 +203,4 @@ fs.writeFile('Fitness.txt', allFitness.toString(), (err) => {
 fs.writeFile('Solution.txt', solutionStr, (err) => {
     if (err) throw err;
 })
+
