@@ -116,9 +116,9 @@ const mutate = function(entity_str) {
 // let f = 'if(1000%2==0){console.log("even");}else{console.log("odd");}'
 // console.log(f.length)
 
-if (eval(';') == undefined){
-    console.log(1)
-}
+// if (eval(';') == undefined){
+//     console.log(1)
+// }
 
 // console.log(eval(';') !== eval('if(1000%2==0){console.log("even");}else{console.log("odd");}'))
 
@@ -143,5 +143,36 @@ const fitness = function(entity_str) {
     return fitness;
 }
 
-console.log(eval(';') == eval(solution))
+
+let prefix = 'function test(){';
+let meat = 'if(10002===0){return("even");}else{reurn("");}';
+let suffix = '}test();';
+
+let eval_entity_str = undefined;
+let sol = prefix + 'if(1000%2===0){return("even");}else{return("odd");}' + suffix;
+
+
+let fit = () => {
+
+    try {
+        eval(eval_entity_str);
+        if (eval(eval_entity_str) !== undefined && eval(eval_entity_str) === eval(sol)){
+            // Lower fitness score if code string is either longer or shorter than solution length
+            return sol.length - Math.abs(sol.length - eval_entity_str.length);
+        }
+        else {
+            return 0;
+        }
+    } catch (e) {
+        return 0;
+    }
+}
+
+console.log('if(1000%2===0){return("even");}else{return("dd");}' === 'if(1000%2===0){return("even");}else{return("odd");}');
+// function test2() {
+//     if(1000%2==0){return("even");}else{return("odd");}
+// } 
+
+// a = eval(new String(test()))
+// console.log(a);
 
