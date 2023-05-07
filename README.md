@@ -220,7 +220,7 @@ genetic.mutate = function(ast) {
 - Max fitness is (100 * t) + 100, where t is the total test cases
 - Since each code individual is represented by an AST, it is alway evaluable
 - Return an integer value
-- Side note: Improve fitness by enhancing crossover, mutation mechanisms, adjusting their rates, or increasing interations number, population size
+- Side note: Improve fitness by enhancing crossover, mutation mechanisms, adjusting their rates, or increasing interations number, population size, test cases
 
 
 ##### `genetic.generation`
