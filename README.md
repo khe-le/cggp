@@ -240,6 +240,6 @@ genetic.mutate = function(ast) {
 - `maxTreeDepth` user-provided max depth of an AST
 
 ### Libraries References
-[genetic-js](https://github.com/subprotocol/genetic-js): Advanced genetic and evolutionary algorithm library written in Javascript 
+[genetic-js](https://github.com/subprotocol/genetic-js): Advanced genetic and evolutionary algorithm library written in Javascript
 [esprima](https://esprima.org/index.html): ECMAScript Parser 
 [escodegen](https://github.com/estools/escodegen): ECMAScript Code Generator 
