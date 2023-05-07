@@ -7,7 +7,7 @@
 - use `npm` to install libraries: `esprima`, `genetic-js`, `escodegen`
 - from command line run: `node gp_codegen.js`
 
-### Fitness Graph
+### Result & Fitness Graph
 - After the GP finishes running, run `graph.py` to plot the fitness results
 - Example result & fitnesses:
 
