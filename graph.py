@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Max no. of generations
-n_gen = 500000
+n_gen = 100000
 
 # Get fitnesses and formula
 f = open('Fitness.txt', 'r')
@@ -17,7 +17,7 @@ t.close()
 
 
 xValues= np.array(list(range(0,len(yValues))))
-title = "Fitness of code string: '{}'".format(formula)
+title = "Fitness of: '{}'".format(formula)
 
 # Plot
 plt.plot(xValues, yValues)
