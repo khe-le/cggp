@@ -7,6 +7,10 @@ const maxTokens = 30;
 let allFitness = [];
 
 
+const myTests =  [["1000", True], ["7", False],["-30", True]
+                ["12.5", False],["84.0", True],["0", True]]
+
+
 const Genetic = require('genetic-js');
 const fs = require("fs")
 
@@ -193,14 +197,15 @@ genetic.evolve({
     tokenList: tokens,
     maxTokensNum: maxTokens,
     manager: utilityManager,
+
 })
 
-// ----- OUTPUT FITNESS + FORMULA TO TXT FILES -----
-fs.writeFile('Fitness.txt', allFitness.toString(), (err) => {
-    if (err) throw err;
-  })
+// // ----- OUTPUT FITNESS + FORMULA TO TXT FILES -----
+// fs.writeFile('Fitness.txt', allFitness.toString(), (err) => {
+//     if (err) throw err;
+//   })
   
-fs.writeFile('Solution.txt', solutionStr, (err) => {
-    if (err) throw err;
-})
+// fs.writeFile('Solution.txt', solutionStr, (err) => {
+//     if (err) throw err;
+// })
 
