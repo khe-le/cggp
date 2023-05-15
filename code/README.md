@@ -11,9 +11,13 @@
 - After the GP finishes running, run `graph.py` to plot the fitness results
 - Example result & fitnesses:
 
-![Example result](https://drive.google.com/uc?id=1-Zf4OCaRiNFujOyaFF6EstjwZHmW8pmf)
-![Result with test cases](https://drive.google.com/uc?id=1ukA3Z0Lu7e6CEowIE3BXEqc0VDbrvV7n)
-![Example graph](https://drive.google.com/uc?id=1SjJx7iI9A8aTc_fkhoJsk-qZetpBG5uT)
+### 10,000 generations:
+![Result with test cases](https://drive.google.com/uc?id=18BCgg5AtEZ1hxtI8S2CMknI53aKhQAdK)
+![Example graph](https://drive.google.com/uc?id=1ic3_x3PmvFTGGwJxE3YfQppCVMQNHx0G)
+
+### 100,000 generations:
+![Result with test cases](https://drive.google.com/uc?id=1dN7JbQmTvMl7-h0PSud4nz7twwY9-xMG)
+![Example graph](https://drive.google.com/uc?id=1b1hSi4t1bpJ5tkhvuc4ESJnCw6N9_8ZM)
 
 ### The Code
 ##### About `gp_codegen.js`
@@ -166,7 +170,6 @@ genetic.seed = function() {
     return tree(this.userData.maxTreeDepth); // a complete AST
 }
 ```
-
 
 ##### `genetic.crossover`
 - Perform crossover on two parent ASTs, swapping their left and right subtrees

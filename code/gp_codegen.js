@@ -6,7 +6,11 @@ const esprima = require('esprima');
 
 let fitnessData = [];
 
-const myTests =  ["1000","7","-30","12","999","0","44","2","-90","-55","2003","54"];
+let testCases = [];
+
+for (let x = -10; x <= 20; x++) {
+    testCases.push(x);
+}
 
 const genetic = Genetic.create();
 genetic.optimize = Genetic.Optimize.Maximize;
@@ -346,14 +350,14 @@ genetic.notification = function(pop, generation, stats, isDone) {
 
 // Running the GA by calling evolve method
 genetic.evolve({
-    iterations: 100000,
+    iterations: 10000,
     size: 100,
-    crossover: 0.7,
-    mutation: 0.8,
+    crossover: 0.5,
+    mutation: 0.5,
 }, {
     manager: utilityManager,
-    testCases: myTests,
-    maxTreeDepth: 1,
+    testCases: testCases,
+    maxTreeDepth: 15,
 })
 
 // ----- OUTPUT FITNESS + FORMULA TO TXT FILES -----
