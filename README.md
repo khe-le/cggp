@@ -1,4 +1,4 @@
-# Math+Code Generation with Genetic Programming
+### Math+Code Generation with Genetic Programming
 
 ##### Authors: Khe Le & Sylvia Le
 
